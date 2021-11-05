@@ -1,0 +1,26 @@
+Given a tree of n, Nodes and edges
+Return a list of all mimimum height tree root labels.
+
+Input: n = 4, edges = [[1,0],[1,2],[1,3]]
+Output: [1]
+
+Input: n = 6, edges = [[3,0],[3,1],[3,2],[3,4],[5,4]]
+Output: [3,4]
+
+Input: n = 1, edges = []
+Output: [0]
+
+Input: n = 2, edges = [[0,1]]
+Output: [0,1]
+
+Solution:
+
+1. Build an Adjacency List from input
+2. Create a queue to hold leaf nodes
+3. loop until there are 2 nodes left in the graph, removing leaves
+   a. Each iteration we remove the current leaf, we also remove the edges that are linked to the nodes. The leaves created, will be trimmed the next iteration
+   b. terminate when there are two nodes left in the graph
+
+Intuition:
+
+The problem is now reduced down to looking for all the centroid nodes in a tree-alike graph, which in addition are no more than two.
